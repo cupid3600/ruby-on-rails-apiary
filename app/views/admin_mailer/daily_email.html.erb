@@ -1,0 +1,5 @@
+<p>Hello <%= @admin.email %>!</p>
+
+<p> In the last 24 hours there were: <%= Flag.last_twenty_four.count %> flagged contents</p>
+<% url = "#{ENV['SERVER_URL']}/admin/flagged_contents" %>
+<p> Check the last flagged contents here: <%= link_to url, url %></p>

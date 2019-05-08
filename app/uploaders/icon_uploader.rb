@@ -1,0 +1,2 @@
+class IconUploader < ImageUploader
+end

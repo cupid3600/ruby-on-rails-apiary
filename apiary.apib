@@ -1,0 +1,882 @@
+FORMAT: 1A
+HOST: http://within-us.herokuapp/api/v1.com
+
+# WITHIN US
+
+## Users Collection [/users]
+
++ Model (application/json)
+
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            expiry: 1489009792
+            uid: test@test.com
+
+    + Body
+
+            {
+              "id": A,
+              "email": "test@test.com",
+              "provider": "email",
+              "uid": "test@test.com",
+              "username": "",
+              "created_at": "2017-02-23T13:54:33.283Z",
+              "updated_at": "2017-02-23T13:54:33.425Z"
+            }
+
+### Signup [POST]
+
++ Request (application/json)
+    + Body
+
+            {
+              "user":
+                {
+                  "email": "test@gmail.com",
+                  "password": "password",
+                  "password_confirmation": "password",
+                  "username": "johhny"
+                }
+            }
+
+
++ Response 401
+
+
++ Response 200
+
+    [Users Collection][]
+
+
+## Current user's profile [/user]
+
+### Get current user profile [GET]
+
++ Request (application/json)
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            uid: test@test.com
+
+
++ Response 401
+
+
++ Response 200
+
+    [Users Collection][]
+
+### Update current user profile [PUT]
+
++ Request (application/json)
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            uid: test@test.com
+
+    + Body
+
+            {
+              "user":
+                {
+                  "password": "password",
+                  "username": "john"
+                }
+            }
+
++ Response 200 (application/json)
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            expiry: 1489009792
+            uid: test@test.com
+
+
+    + Body
+
+            {
+              "user":
+                {
+                  "email": "test@test.com",
+                  "username": "john",
+                  "picture": "https://robohash.org/sitsequiquia.png?size=100x100"
+                }
+            }
+
+## Get other user's profile [/users/{id}]
+
+### Get user [GET]
+
++ Request (application/json)
+    + Parameters
+        + id (integer, required)
+
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            uid: test@test.com
+
+
++ Response 401
+
+
++ Response 200
+
+    [Users Collection][]
+
+## Login [/users/sign_in]
+
+### Login [POST]
+
++ Request
+
+    [Users Collection][]
+
+
++ Response 401
+
+
++ Response 200 (application/json)
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            expiry: 1489009792
+            uid: test@test.com
+
+
+    + Body
+
+            {
+              "user":
+                {
+                  "id": 102,
+                  "email": "test@test.com",
+                  "provider": "email",
+                  "uid": "test@test.com",
+                  "username": "",
+                  "created_at": "2017-02-23T13:54:33.283Z",
+                  "updated_at": "2017-02-23T13:54:33.425Z"
+                }
+            }
+
+## Logout [/users/sign_out]
+
+### Logout [DELETE]
+
++ Request (application/json)
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            expiry: 1489009792
+            uid: test@test.com
+
++ Response 200 (application/json)
+
+## Reset password [/users/password]
+
+### Reset passowrd [POST]
+
+Use this route to send a password reset confirmation email
+https://github.com/lynndylanhurley/devise_token_auth/wiki/Reset-Password-Flow
+
++ Request (application/json)
+    + Body
+
+            {
+              "email": "test@test.com",
+              "redirect_url": "http://www.example.com"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+              "success": true,
+              "message": "An email has been sent to 'example@mail.com' containing instructions for resetting your password."
+            }
+
+### Reset passowrd [PUT]
+
+Use this route to change user's passwords
+https://github.com/lynndylanhurley/devise_token_auth/wiki/Reset-Password-Flow
+
++ Request (application/json)
+    + Parameters
+        + reset_password_token (string, required)
+
+    + Body
+
+            {
+              "password": "12345678",
+              "password_confirmation": "12345678"
+            }
+
++ Response 200 (application/json)
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            expiry: 1489009792
+            uid: test@test.com
+
+    + Body
+
+            {
+              "user":
+                {
+                  "id": 366,
+                  "email": "test@facebook.com",
+                  "username": "john",
+                  "provider": "facebook",
+                  "uid": "1234567890"
+                }
+            }
+
+## Edit reset password [/users/password/edit]
+
+### Edit reset password [GET]
+
+This route is the destination URL for password reset confirmation
+https://github.com/lynndylanhurley/devise_token_auth/wiki/Reset-Password-Flow
+
++ Request (application/json)
+    + Parameters
+        + reset_password_token (string, required)
+        + redirect_url (string)
+
++ Response 200 (application/json)
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            expiry: 1489009792
+            uid: test@test.com
+
+
+## Constellation Requests Collection [/constellation_requests]
+
++ Model (application/json)
+
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            expiry: 1489009792
+            uid: test@test.com
+
+    + Body
+
+            {
+              "constellation_request":
+                {
+                  "id": 1,
+                  "name": "Constelation name",
+                  "reason": "This is the reason.",
+                  "content_attributes":
+                    {
+                      "file": Bytes,
+                      "type": "Video"
+                    }
+                }
+            }
+
+### Create [POST]
+
++ Request (application/json)
+
+        {
+          "constellation_request":
+            {
+              "name": "Constelation name",
+              "reason": "This is the reason."
+            }
+        }
+
++ Response 200
+
+
+## Constellations Collection [/constellations]
+
++ Model (application/json)
+
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            expiry: 1489009792
+            uid: test@test.com
+
+
+    + Body
+
+            {
+              "constellations": [
+                {
+                  "id": 10,
+                  "name": "Constellation name",
+                  "icon": "Url to constellation icon",
+                  "stories": 32,
+                },
+              ]
+            }
+
+### Index [GET]
+
++ Request (application/json)
+
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            uid: test@test.com
+
+    + Parameters
+
+        +  page (number)  - Indicates dthe number of the page requesting
+
++ Response 401
+
+
++ Response 200
+
+    [Constellations Collection][]
+
+## Search constellations [/constellations/search]
+
++ Model (application/json)
+
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            expiry: 1489009792
+            uid: test@test.com
+
+
+    + Body
+
+            {
+              "constellations": [
+                {
+                  "id": 10,
+                  "name": "Constellation name",
+                  "icon": "Url to constellation icon",
+                  "stories": 32,
+                },
+              ]
+            }
+
+### Search [GET]
+
++ Request (application/json)
+
+
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            uid: test@test.com
+
+    + Parameters
+
+        +  page (number)  - Indicates dthe number of the page requesting
+        + constellation (string) - Indicates the constellation name or partial name to be looked for
+
++ Response 401
+
+
++ Response 200
+
+    [Constellations Collection][]
+
+## Summary content per constellation [/constellations/:id/summary]
+
+### Summary [GET]
+
++ Request (application/json)
+
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            uid: test@test.com
+
++ Response 400
+
++ Response 401
+
++ Response 200
+
+            {
+               "common": [
+                            {
+                                "id": 1,
+                                "file": "https://someS3url.com",
+                                "thumbnail": "https://someimageurl.com",
+                                "created_at": "12/12/12",
+                                "owner": {
+                                            "user info"
+                                         }
+                                "constellations": [
+                                                    {
+                                                      "id": 10,
+                                                      "name": "Constellation name",
+                                                      "icon": "Url to constellation icon",
+                                                      "stories": 32,
+                                                    },
+                                                  ]
+                                "type": "audio",
+                                "flagged":true/false,
+                                "hearted": true/false,
+                            }
+                          ],
+
+               "about_to_expire": [
+                                    {
+                                        "id": 1,
+                                        "file": "https://someS3url.com",
+                                        "thumbnail": "https://someimageurl.com",
+                                        "created_at": "12/12/12",
+                                        "owner": {
+                                                    "user info"
+                                                 }
+                                        "constellations": [
+                                                            {
+                                                              "id": 10,
+                                                              "name": "Constellation name",
+                                                              "icon": "Url to constellation icon",
+                                                              "stories": 32,
+                                                            },
+                                                          ]
+                                        "type": "audio",
+                                        "flagged":true/false,
+                                        "hearted": true/false,
+                                    }
+                                  ],
+
+               "popular": [
+                            {
+                                "id": 1,
+                                "file": "https://someS3url.com",
+                                "thumbnail": "https://someimageurl.com",
+                                "created_at": "12/12/12",
+                                "owner": {
+                                            "user info"
+                                         }
+                                "constellations": [
+                                                    {
+                                                      "id": 10,
+                                                      "name": "Constellation name",
+                                                      "icon": "Url to constellation icon",
+                                                      "stories": 32,
+                                                    },
+                                                  ]
+                                "type": "audio",
+                                "flagged":true/false,
+                                "hearted": true/false,
+                            }
+                          ]
+            }
+
+# Contents about to expire per constellation [/constellations/:id/about_to_expire]
+
+### About To Expire [GET]
+
++ Request (application/json)
+
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            uid: test@test.com
+
++ Response 400
+
++ Response 401
+
++ Response 200
+
+            {
+               "contents": [
+                              {
+                                  "id": 1,
+                                  "file": "https://someS3url.com",
+                                  "thumbnail": "https://someimageurl.com",
+                                  "created_at": "12/12/12",
+                                  "owner": {
+                                              "user info"
+                                           }
+                                  "constellations": [
+                                                      {
+                                                        "id": 10,
+                                                        "name": "Constellation name",
+                                                        "icon": "Url to constellation icon",
+                                                        "stories": 32,
+                                                      },
+                                                    ]
+                                  "type": "audio",
+                                  "flagged":true/false,
+                                  "hearted": true/false,
+                              }
+                            ]
+
+# Popular content per constellation [/constellations/:id/popular]
+
+### Popular [GET]
+
++ Request (application/json)
+
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            uid: test@test.com
+
++ Response 400
+
++ Response 401
+
++ Response 200
+
+            {
+               "contents": [
+                              {
+                                  "id": 1,
+                                  "file": "https://someS3url.com",
+                                  "thumbnail": "https://someimageurl.com",
+                                  "created_at": "12/12/12",
+                                  "owner": {
+                                              "user info"
+                                           }
+                                  "constellations": [
+                                                      {
+                                                        "id": 10,
+                                                        "name": "Constellation name",
+                                                        "icon": "Url to constellation icon",
+                                                        "stories": 32,
+                                                      },
+                                                    ]
+                                  "type": "audio",
+                                  "flagged":true/false,
+                                  "hearted": true/false,
+                              }
+                            ]
+
+# Common content per constellation [/constellations/:id/summary]
+
+### Common [GET]
+
++ Request (application/json)
+
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            uid: test@test.com
+
++ Response 400
+
++ Response 401
+
++ Response 200
+
+            {
+               "contents": [
+                              {
+                                  "id": 1,
+                                  "file": "https://someS3url.com",
+                                  "thumbnail": "https://someimageurl.com",
+                                  "created_at": "12/12/12",
+                                  "owner": {
+                                              "user info"
+                                           }
+                                  "constellations": [
+                                                      {
+                                                        "id": 10,
+                                                        "name": "Constellation name",
+                                                        "icon": "Url to constellation icon",
+                                                        "stories": 32,
+                                                      },
+                                                    ]
+                                  "type": "audio",
+                                  "flagged":true/false,
+                                  "hearted": true/false,
+                              }
+                            ]
+
+## Contents Collections [/contents]
+
++ Model (application/json)
+
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            expiry: 1489009792
+            uid: test@test.com
+
+    + Body
+
+            {
+              "content": {
+                "id": 1,
+                "file": "https://someS3url.com",
+                "thumbnail": "https://someimageurl.com",
+                "created_at": "12/12/12",
+                "owner": {
+                            "user info"
+                         }
+                "constellations": [
+                                    {
+                                      "id": 10,
+                                      "name": "Constellation name",
+                                      "icon": "Url to constellation icon",
+                                      "stories": 32,
+                                    },
+                                  ]
+                "type": "audio",
+                "flagged":true/false,
+                "hearted": true/false,
+            }
+
+### Create [POST]
+
++ Request (application/json)
+
+        {
+          "content": {
+                        "file": Bytes,
+                        "constellations": [const_id, const_id],
+                        "shooting_star": true
+                      }
+        }
+
++ Response 400
+
++ Response 401
+
++ Response 200
+
+    [Contents Collections][]
+
+
+### Update constellations for a content [PUT]
+
++ Request (application/json)
+
+        {
+          "constellation_ids": [1, 2, 3]
+        }
+
++ Response 400
+
++ Response 401
+
++ Response 200
+
+
+### Index [GET]
+
++ Request (application/json)
+
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            uid: test@test.com
+
+    + Parameters
+        +  constellation_id - Indicates the id of the constellation
+        +  page (number)  - Indicates the number of the page requesting
+
++ Response 401
+
+
++ Response 200 (application/json)
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            expiry: 1489009792
+            uid: test@test.com
+
+
+    + Body
+
+            {
+              "contents": [
+                            {
+                                "id": 1,
+                                "file": "https://someS3url.com",
+                                "thumbnail": "https://someimageurl.com",
+                                "created_at": "12/12/12",
+                                "owner": {
+                                            "user info"
+                                         }
+                                "constellations": [
+                                                    {
+                                                      "id": 10,
+                                                      "name": "Constellation name",
+                                                      "icon": "Url to constellation icon",
+                                                      "stories": 32,
+                                                    },
+                                                  ]
+                                "type": "audio",
+                                "flagged":true/false,
+                                "hearted": true/false,
+                            }
+                          ]
+
+            }
+
+## Flag content [/contents/:id/flag]
+
+### Flag a specific content [POST]
+
++ Request (application/json)
+
++ Response 400
+
++ Response 401
+
++ Response 200
+
+    [Contents Collections][]
+
+## Favorite content [/contents/:id/favorite]
+
+### Heart an specific content [POST]
+
++ Request (application/json)
+
+        {
+          "favorite": true/false
+        }
+
++ Response 400
+
++ Response 401
+
++ Response 200
+
+    [Contents Collections][]
+
+## Favorites contents [/contents/favorite]
+
+### Get list of favorite contents [GET]
+
++ Request (application/json)
+
++ Response 400
+
++ Response 401
+
++ Response 200
+
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            expiry: 1489009792
+            uid: test@test.com
+
+    + Body
+
+            {
+              "contents": [
+                            {
+                                "id": 1,
+                                "file": "https://someS3url.com",
+                                "thumbnail": "https://someimageurl.com",
+                                "created_at": "12/12/12",
+                                "owner": {
+                                            "user info"
+                                         }
+                                "constellations": [
+                                                    {
+                                                      "id": 10,
+                                                      "name": "Constellation name",
+                                                      "icon": "Url to constellation icon",
+                                                      "stories": 32,
+                                                    },
+                                                  ]
+                                "type": "audio",
+                                "flagged":true/false,
+                                "hearted": true/false,
+                            }
+                          ]
+
+            }
+
+## Shooting stars Collections [/shooting_stars]
+
+### Index [GET]
+
++ Request (application/json)
+
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            uid: test@test.com
+
++ Response 401
+
+
++ Response 200 (application/json)
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            expiry: 1489009792
+            uid: test@test.com
+
+
+    + Body
+
+            {
+              "shooting_stars": [
+                {
+                    "id": 1,
+                    "file": "https://someS3url.com",
+                    "created_at": "12/12/12",
+                    "type": 'Video'
+                }
+              ]
+            }
+
+## Show shooting star [/shooting_stars/show_one]
+
+### Show a random shooting star [POST]
+
++ Request (application/json)
+
+    + Headers
+
+            access-token: sO2bm_Bpdyoo8r78jZ-fqg
+            client: QADgNCWRJj0LyRruqzYbBg
+            uid: test@test.com
+
++ Response 401
+
+
++ Response 200 (application/json)
+    + Body
+
+            {
+              "shooting_star":
+                {
+                    "id": 1,
+                    "file": "https://someS3url.com",
+                    "created_at": "12/12/12",
+                    "type": 'Video'
+                }
+            }
