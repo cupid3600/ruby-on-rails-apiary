@@ -5,6 +5,8 @@ module Api
     class ApiController < ApplicationController
       include Concerns::ActAsApiRequest
       include DeviseTokenAuth::Concerns::SetUserByToken
+      include Response
+      include LogHelper
 
       before_action :authenticate_user!, except: :status
 

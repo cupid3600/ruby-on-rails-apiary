@@ -2,12 +2,14 @@
 #
 # Table name: constellations
 #
-#  id         :integer          not null, primary key
-#  name       :string
-#  icon       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  stories    :integer          default("0")
+#  id              :integer          not null, primary key
+#  name            :string
+#  icon            :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  stories         :integer          default("0")
+#  show_on_sign_up :boolean          default("false")
+#  is_deleted      :boolean          default("false")
 #
 
 class Constellation < ApplicationRecord
@@ -15,7 +17,7 @@ class Constellation < ApplicationRecord
 
   has_many :content_constellations, dependent: :destroy
   has_many :contents, through: :content_constellations
-
+  has_many :planets
   validates :name, presence: true
 
   def self.to_dropdown_ordered

@@ -37,6 +37,8 @@ Rails.application.routes.draw do
             get :favorites
           end
         end
+        resources :goals
+        resources :planets
         scope :shooting_stars, controller: :shooting_stars do
           get :show_one
           get :count

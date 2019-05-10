@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190508171610) do
+ActiveRecord::Schema.define(version: 20190510022243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20190508171610) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "stories", default: 0
+    t.boolean "show_on_sign_up", default: false
+    t.boolean "is_deleted", default: false
   end
 
   create_table "content_constellations", force: :cascade do |t|
@@ -117,6 +119,17 @@ ActiveRecord::Schema.define(version: 20190508171610) do
     t.index ["user_id"], name: "index_hearts_on_user_id"
   end
 
+  create_table "planets", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "icon"
+    t.boolean "is_approved", default: false, null: false
+    t.boolean "is_deleted", default: false, null: false
+    t.bigint "constellation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["constellation_id"], name: "index_planets_on_constellation_id"
+  end
+
   create_table "users", id: :serial, force: :cascade do |t|
     t.string "email"
     t.string "encrypted_password", default: "", null: false
@@ -148,4 +161,5 @@ ActiveRecord::Schema.define(version: 20190508171610) do
   add_foreign_key "flags", "users"
   add_foreign_key "hearts", "contents"
   add_foreign_key "hearts", "users"
+  add_foreign_key "planets", "constellations"
 end
