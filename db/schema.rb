@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190510022243) do
+ActiveRecord::Schema.define(version: 20190510093513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +119,24 @@ ActiveRecord::Schema.define(version: 20190510022243) do
     t.index ["user_id"], name: "index_hearts_on_user_id"
   end
 
+  create_table "interests_constellations", force: :cascade do |t|
+    t.bigint "constellation_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["constellation_id"], name: "index_interests_constellations_on_constellation_id"
+    t.index ["user_id"], name: "index_interests_constellations_on_user_id"
+  end
+
+  create_table "interests_planets", force: :cascade do |t|
+    t.bigint "planet_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["planet_id"], name: "index_interests_planets_on_planet_id"
+    t.index ["user_id"], name: "index_interests_planets_on_user_id"
+  end
+
   create_table "planets", force: :cascade do |t|
     t.string "title", null: false
     t.string "icon"
@@ -161,5 +179,9 @@ ActiveRecord::Schema.define(version: 20190510022243) do
   add_foreign_key "flags", "users"
   add_foreign_key "hearts", "contents"
   add_foreign_key "hearts", "users"
+  add_foreign_key "interests_constellations", "constellations"
+  add_foreign_key "interests_constellations", "users"
+  add_foreign_key "interests_planets", "planets"
+  add_foreign_key "interests_planets", "users"
   add_foreign_key "planets", "constellations"
 end

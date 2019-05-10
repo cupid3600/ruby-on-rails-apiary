@@ -18,4 +18,5 @@
 
 class Planet < ApplicationRecord
   belongs_to :constellation
+  has_many :interests_planet
 end

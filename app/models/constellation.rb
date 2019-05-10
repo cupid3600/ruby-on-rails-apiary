@@ -18,6 +18,7 @@ class Constellation < ApplicationRecord
   has_many :content_constellations, dependent: :destroy
   has_many :contents, through: :content_constellations
   has_many :planets
+  has_many :interests_constellations
   validates :name, presence: true
 
   def self.to_dropdown_ordered

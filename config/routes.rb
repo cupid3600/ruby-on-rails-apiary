@@ -39,6 +39,8 @@ Rails.application.routes.draw do
         end
         resources :goals
         resources :planets
+        resources :interests_constellations
+        resources :interests_planets
         scope :shooting_stars, controller: :shooting_stars do
           get :show_one
           get :count

@@ -4188,3 +4188,585 @@ Processing by Api::V1::PlanetsController#index as JSON
 Completed 200 OK in 14ms (Views: 1.5ms | ActiveRecord: 3.7ms)
 
 
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/lix/Desktop/ruby-on-rails-apiary/config/initializers/new_framework_defaults.rb:15)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/lix/Desktop/ruby-on-rails-apiary/config/initializers/new_framework_defaults.rb:15)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(737815420147457505);[0m
+  [1m[35m (41.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateInterestsConstellations (20190510085152)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (211.1ms)[0m  [1m[35mCREATE TABLE "interests_constellations" ("id" bigserial primary key, "constellation_id" bigint NOT NULL, "user_id" bigint NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_82f00c81e3"
+FOREIGN KEY ("constellation_id")
+  REFERENCES "constellations" ("id")
+, CONSTRAINT "fk_rails_bea45a1fd0"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX  "index_interests_constellations_on_constellation_id" ON "interests_constellations"  ("constellation_id")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_interests_constellations_on_user_id" ON "interests_constellations"  ("user_id")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190510085152"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (6.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(737815420147457505)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/lix/Desktop/ruby-on-rails-apiary/config/initializers/new_framework_defaults.rb:15)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/lix/Desktop/ruby-on-rails-apiary/config/initializers/new_framework_defaults.rb:15)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/lix/Desktop/ruby-on-rails-apiary/config/initializers/new_framework_defaults.rb:15)
+Started POST "/api/v1/interests_constellations" for 127.0.0.1 at 2019-05-10 02:18:37 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::InterestsConstellationsController#create as JSON
+  Parameters: {"interests_constellation"=>{"user_id"=>1, "constellation_id"=>2}}
+  [1m[36mUser Load (41.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (30.7ms)[0m  [1m[32mINSERT INTO "interests_constellations" ("constellation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["constellation_id", 2], ["user_id", 1], ["created_at", "2019-05-10 09:18:37.439805"], ["updated_at", "2019-05-10 09:18:37.439805"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 232ms (Views: 0.5ms | ActiveRecord: 83.9ms)
+
+
+Started DELETE "/api/v1/interests_constellations/1" for 127.0.0.1 at 2019-05-10 02:19:07 -0700
+
+AbstractController::ActionNotFound - The action 'destroy' could not be found for Api::V1::InterestsConstellationsController:
+  actionpack (5.1.2) lib/abstract_controller/base.rb:119:in `process'
+  actionview (5.1.2) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.2) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.2) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.2) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+  actionpack (5.1.2) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+  actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+  actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+  bullet (5.5.1) lib/bullet/rack.rb:12:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+  actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  request_store (1.3.2) lib/request_store/middleware.rb:9:in `call'
+  actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (5.1.2) lib/rails/engine.rb:522:in `call'
+  puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+  puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+  puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+  puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/lix/Desktop/ruby-on-rails-apiary/config/initializers/new_framework_defaults.rb:15)
+Started DELETE "/api/v1/interests_constellations/1" for 127.0.0.1 at 2019-05-10 02:24:17 -0700
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::InterestsConstellationsController#destroy as JSON
+  Parameters: {"interests_constellation"=>{"user_id"=>1, "constellation_id"=>2}, "id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mInterestsConstellation Load (0.5ms)[0m  [1m[34mSELECT  "interests_constellations".* FROM "interests_constellations" WHERE "interests_constellations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "interests_constellations" WHERE "interests_constellations"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 125ms (Views: 0.4ms | ActiveRecord: 12.1ms)
+
+
+Started POST "/api/v1/interests_constellations/1" for 127.0.0.1 at 2019-05-10 02:26:15 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/interests_constellations/1"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+request_store (1.3.2) lib/request_store/middleware.rb:9:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/api/v1/interests_constellations" for 127.0.0.1 at 2019-05-10 02:26:32 -0700
+Processing by Api::V1::InterestsConstellationsController#create as JSON
+  Parameters: {"interests_constellation"=>{"user_id"=>1, "constellation_id"=>2}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "interests_constellations" ("constellation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["constellation_id", 2], ["user_id", 1], ["created_at", "2019-05-10 09:26:32.306057"], ["updated_at", "2019-05-10 09:26:32.306057"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 110ms (Views: 0.4ms | ActiveRecord: 10.8ms)
+
+
+Started PUT "/api/v1/interests_constellations" for 127.0.0.1 at 2019-05-10 02:27:05 -0700
+  
+ActionController::RoutingError (No route matches [PUT] "/api/v1/interests_constellations"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+request_store (1.3.2) lib/request_store/middleware.rb:9:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started PUT "/api/v1/interests_constellations/2" for 127.0.0.1 at 2019-05-10 02:27:12 -0700
+Processing by Api::V1::InterestsConstellationsController#update as JSON
+  Parameters: {"interests_constellation"=>{"user_id"=>1, "constellation_id"=>4}, "id"=>"2"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mInterestsConstellation Load (0.7ms)[0m  [1m[34mSELECT  "interests_constellations".* FROM "interests_constellations" WHERE "interests_constellations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "interests_constellations" SET "constellation_id" = $1, "updated_at" = $2 WHERE "interests_constellations"."id" = $3[0m  [["constellation_id", 4], ["updated_at", "2019-05-10 09:27:12.534996"], ["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 28ms (Views: 0.6ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/api/v1/interests_constellations/2" for 127.0.0.1 at 2019-05-10 02:27:23 -0700
+Processing by Api::V1::InterestsConstellationsController#show as JSON
+  Parameters: {"interests_constellation"=>{"user_id"=>1, "constellation_id"=>4}, "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/api/v1/interests_constellations/2" for 127.0.0.1 at 2019-05-10 02:27:54 -0700
+Processing by Api::V1::InterestsConstellationsController#show as JSON
+  Parameters: {"interests_constellation"=>{"user_id"=>1, "constellation_id"=>4}, "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mInterestsConstellation Load (1.6ms)[0m  [1m[34mSELECT  "interests_constellations".* FROM "interests_constellations" WHERE "interests_constellations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 103ms (Views: 0.4ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/api/v1/interests_constellations/2" for 127.0.0.1 at 2019-05-10 02:28:29 -0700
+Processing by Api::V1::InterestsConstellationsController#show as JSON
+  Parameters: {"interests_constellation"=>{"constellation_id"=>2}, "id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mInterestsConstellation Load (0.5ms)[0m  [1m[34mSELECT  "interests_constellations".* FROM "interests_constellations" WHERE "interests_constellations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 18ms (Views: 0.5ms | ActiveRecord: 5.9ms)
+
+
+Started PUT "/api/v1/interests_constellations/2" for 127.0.0.1 at 2019-05-10 02:28:44 -0700
+Processing by Api::V1::InterestsConstellationsController#update as JSON
+  Parameters: {"interests_constellation"=>{"constellation_id"=>2}, "id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mInterestsConstellation Load (0.6ms)[0m  [1m[34mSELECT  "interests_constellations".* FROM "interests_constellations" WHERE "interests_constellations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "interests_constellations" SET "constellation_id" = $1, "updated_at" = $2 WHERE "interests_constellations"."id" = $3[0m  [["constellation_id", 2], ["updated_at", "2019-05-10 09:28:44.172390"], ["id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/api/v1/interests_constellations" for 127.0.0.1 at 2019-05-10 02:28:58 -0700
+
+AbstractController::ActionNotFound - The action 'index' could not be found for Api::V1::InterestsConstellationsController:
+  actionpack (5.1.2) lib/abstract_controller/base.rb:119:in `process'
+  actionview (5.1.2) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.2) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.2) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.2) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+  actionpack (5.1.2) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+  actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+  actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+  bullet (5.5.1) lib/bullet/rack.rb:12:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+  actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  request_store (1.3.2) lib/request_store/middleware.rb:9:in `call'
+  actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (5.1.2) lib/rails/engine.rb:522:in `call'
+  puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+  puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+  puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+  puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+
+Started GET "/api/v1/interests_constellations/2" for 127.0.0.1 at 2019-05-10 02:29:32 -0700
+Processing by Api::V1::InterestsConstellationsController#show as JSON
+  Parameters: {"interests_constellation"=>{"constellation_id"=>2}, "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mInterestsConstellation Load (0.4ms)[0m  [1m[34mSELECT  "interests_constellations".* FROM "interests_constellations" WHERE "interests_constellations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 20ms (Views: 0.5ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/api/v1/interests_constellations" for 127.0.0.1 at 2019-05-10 02:30:56 -0700
+Processing by Api::V1::InterestsConstellationsController#index as JSON
+  Parameters: {"interests_constellation"=>{"constellation_id"=>2}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mInterestsConstellation Load (1.2ms)[0m  [1m[34mSELECT "interests_constellations".* FROM "interests_constellations"[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 105ms (Views: 5.6ms | ActiveRecord: 9.5ms)
+
+
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/lix/Desktop/ruby-on-rails-apiary/config/initializers/new_framework_defaults.rb:15)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(737815420147457505);[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateInterestsPlanets (20190510093513)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "interests_planets" ("id" bigserial primary key, "planet_id" bigint NOT NULL, "user_id" bigint NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_a0b3d28ca5"
+FOREIGN KEY ("planet_id")
+  REFERENCES "planets" ("id")
+, CONSTRAINT "fk_rails_04284ae2b9"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_interests_planets_on_planet_id" ON "interests_planets"  ("planet_id")[0m
+  [1m[35m (16.3ms)[0m  [1m[35mCREATE  INDEX  "index_interests_planets_on_user_id" ON "interests_planets"  ("user_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190510093513"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(737815420147457505)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/lix/Desktop/ruby-on-rails-apiary/config/initializers/new_framework_defaults.rb:15)
+Started POST "/api/v1/interests_constellations" for 127.0.0.1 at 2019-05-10 02:50:29 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::InterestsConstellationsController#create as JSON
+  Parameters: {"interests_constellation"=>{"planet_id"=>1, "constellation_id"=>2}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+Unpermitted parameter: :planet_id
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.3ms)[0m  [1m[32mINSERT INTO "interests_constellations" ("constellation_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["constellation_id", 2], ["created_at", "2019-05-10 09:50:30.013455"], ["updated_at", "2019-05-10 09:50:30.013455"]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+PG::NotNullViolation: ERROR:  null value in column "user_id" violates not-null constraint
+DETAIL:  Failing row contains (3, 2, null, 2019-05-10 09:50:30.013455, 2019-05-10 09:50:30.013455).
+: INSERT INTO "interests_constellations" ("constellation_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"
+Completed 500 Internal Server Error in 143ms (Views: 0.6ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/api/v1/interests_planets" for 127.0.0.1 at 2019-05-10 02:50:50 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/interests_planets"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+request_store (1.3.2) lib/request_store/middleware.rb:9:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/lix/Desktop/ruby-on-rails-apiary/config/initializers/new_framework_defaults.rb:15)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/lix/Desktop/ruby-on-rails-apiary/config/initializers/new_framework_defaults.rb:15)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/lix/Desktop/ruby-on-rails-apiary/config/initializers/new_framework_defaults.rb:15)
+Started POST "/api/v1/interests_planets" for 127.0.0.1 at 2019-05-10 02:51:57 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::InterestsPlanetsController#create as JSON
+  Parameters: {"interests_constellation"=>{"planet_id"=>1, "constellation_id"=>2}, "interests_planet"=>{}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+param is missing or the value is empty: interests_planet
+Completed 500 Internal Server Error in 98ms (Views: 0.3ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/api/v1/interests_planets" for 127.0.0.1 at 2019-05-10 02:52:25 -0700
+Processing by Api::V1::InterestsPlanetsController#create as JSON
+  Parameters: {"interests_constellation"=>{"planet_id"=>1, "user_id"=>1}, "interests_planet"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+param is missing or the value is empty: interests_planet
+Completed 500 Internal Server Error in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/interests_planets" for 127.0.0.1 at 2019-05-10 02:52:56 -0700
+Processing by Api::V1::InterestsPlanetsController#create as JSON
+  Parameters: {"interests_planet"=>{"planet_id"=>1, "user_id"=>1}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "interests_planets" ("planet_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["planet_id", 1], ["user_id", 1], ["created_at", "2019-05-10 09:52:56.021434"], ["updated_at", "2019-05-10 09:52:56.021434"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 37ms (Views: 0.9ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/api/v1/interests_planets/1" for 127.0.0.1 at 2019-05-10 02:53:20 -0700
+Processing by Api::V1::InterestsPlanetsController#show as JSON
+  Parameters: {"interests_planet"=>{"planet_id"=>1, "user_id"=>1}, "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/v1/interests_planets/1" for 127.0.0.1 at 2019-05-10 02:53:37 -0700
+Processing by Api::V1::InterestsPlanetsController#show as JSON
+  Parameters: {"interests_planet"=>{"planet_id"=>1, "user_id"=>1}, "id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mInterestsPlanet Load (0.5ms)[0m  [1m[34mSELECT  "interests_planets".* FROM "interests_planets" WHERE "interests_planets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 90ms (Views: 0.5ms | ActiveRecord: 7.9ms)
+
+
+Started DELETE "/api/v1/interests_planets/1" for 127.0.0.1 at 2019-05-10 02:53:57 -0700
+Processing by Api::V1::InterestsPlanetsController#destroy as JSON
+  Parameters: {"interests_planet"=>{"planet_id"=>1, "user_id"=>1}, "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mInterestsPlanet Load (0.5ms)[0m  [1m[34mSELECT  "interests_planets".* FROM "interests_planets" WHERE "interests_planets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "interests_planets" WHERE "interests_planets"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/api/v1/interests_planets/1" for 127.0.0.1 at 2019-05-10 02:54:07 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/interests_planets/1"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+request_store (1.3.2) lib/request_store/middleware.rb:9:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/api/v1/interests_planets" for 127.0.0.1 at 2019-05-10 02:54:14 -0700
+Processing by Api::V1::InterestsPlanetsController#create as JSON
+  Parameters: {"interests_planet"=>{"planet_id"=>1, "user_id"=>1}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "interests_planets" ("planet_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["planet_id", 1], ["user_id", 1], ["created_at", "2019-05-10 09:54:14.657024"], ["updated_at", "2019-05-10 09:54:14.657024"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 19ms (Views: 0.5ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/api/v1/interests_planets/2" for 127.0.0.1 at 2019-05-10 02:54:21 -0700
+Processing by Api::V1::InterestsPlanetsController#show as JSON
+  Parameters: {"interests_planet"=>{"planet_id"=>1, "user_id"=>1}, "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mInterestsPlanet Load (0.7ms)[0m  [1m[34mSELECT  "interests_planets".* FROM "interests_planets" WHERE "interests_planets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 18ms (Views: 0.4ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/api/v1/interests_planets" for 127.0.0.1 at 2019-05-10 02:54:27 -0700
+Processing by Api::V1::InterestsPlanetsController#index as JSON
+  Parameters: {"interests_planet"=>{"planet_id"=>1, "user_id"=>1}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mInterestsPlanet Load (0.4ms)[0m  [1m[34mSELECT "interests_planets".* FROM "interests_planets"[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 19ms (Views: 1.3ms | ActiveRecord: 4.9ms)
+
+

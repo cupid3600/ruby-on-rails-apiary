@@ -44,6 +44,8 @@ class User < ApplicationRecord
   has_many :hearts, dependent: :destroy
   has_many :hearted_contents, through: :hearts, source: :content
   has_many :constellation_requests
+  has_many :interests_constellations
+  has_many :interests_planets
 
   validates :uid, uniqueness: { scope: :provider }
   validates :username, uniqueness: true
