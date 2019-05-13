@@ -15,4 +15,5 @@
 #
 
 class Goal < ApplicationRecord
+  scope :is_deleted, ->(is_deleted) { where(is_deleted: is_deleted) }
 end

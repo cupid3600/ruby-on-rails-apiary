@@ -37,10 +37,10 @@ Rails.application.routes.draw do
             get :favorites
           end
         end
-        resources :goals
-        resources :planets
-        resources :interests_constellations
-        resources :interests_planets
+        resources :goals, only: [:index, :show]
+        resources :planets, only: [:index, :show, :create, :update]
+        resources :interests_constellations, except: [:show, :new, :edit]
+        resources :interests_planets, except: [:show, :new, :edit]
         scope :shooting_stars, controller: :shooting_stars do
           get :show_one
           get :count

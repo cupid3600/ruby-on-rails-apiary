@@ -11,18 +11,13 @@ module Api
       def index
 
         if params[:is_deleted]
-          @goals = Goal.where(:is_deleted => params[:is_deleted])
+          @goals = Goal.is_deleted(params[:is_deleted])
           json_response({ goals: @goals })
         else
-          @goals = Goal.where(:is_deleted => false)
+          @goals = Goal.is_deleted(false )
           json_response({ goals: @goals })
         end
 
-      end
-
-      def create
-        @goal = Goal.create!(goal_params)
-        json_response({ goal: @goal })
       end
 
       private

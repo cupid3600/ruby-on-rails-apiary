@@ -4770,3 +4770,417 @@ Processing by Api::V1::InterestsPlanetsController#index as JSON
 Completed 200 OK in 19ms (Views: 1.3ms | ActiveRecord: 4.9ms)
 
 
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/lix/Desktop/ruby-on-rails-apiary/config/initializers/new_framework_defaults.rb:15)
+Started GET "/api/v1/goals?is_deleted=true" for 127.0.0.1 at 2019-05-12 18:45:17 -0700
+  [1m[35m (40.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::GoalsController#index as JSON
+  Parameters: {"is_deleted"=>"true", "goal"=>{}}
+  [1m[36mUser Load (16.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mGoal Load (57.9ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."is_deleted" = $1[0m  [["is_deleted", "true"]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 271ms (Views: 5.6ms | ActiveRecord: 125.5ms)
+
+
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/lix/Desktop/ruby-on-rails-apiary/config/initializers/new_framework_defaults.rb:15)
+Started GET "/api/v1/goals?is_deleted=true" for 127.0.0.1 at 2019-05-12 18:45:48 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::GoalsController#index as JSON
+  Parameters: {"is_deleted"=>"true", "goal"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mGoal Load (0.5ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."is_deleted" = $1[0m  [["is_deleted", "true"]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 118ms (Views: 8.9ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/api/v1/goals" for 127.0.0.1 at 2019-05-12 18:45:53 -0700
+Processing by Api::V1::GoalsController#index as JSON
+  Parameters: {"goal"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mGoal Load (0.6ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."is_deleted" = $1[0m  [["is_deleted", "f"]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 16ms (Views: 1.8ms | ActiveRecord: 4.3ms)
+
+
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/lix/Desktop/ruby-on-rails-apiary/config/initializers/new_framework_defaults.rb:15)
+Started GET "/api/v1/constellations?is_deleted=true" for 127.0.0.1 at 2019-05-12 19:39:36 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ConstellationsController#index as JSON
+  Parameters: {"is_deleted"=>"true", "constellation"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  Rendering api/v1/constellations/index.json.jbuilder
+  [1m[36mConstellation Load (30.0ms)[0m  [1m[34mSELECT  "constellations".* FROM "constellations" WHERE "constellations"."is_deleted" = $1 ORDER BY "constellations"."id" ASC LIMIT $2 OFFSET $3[0m  [["is_deleted", "true"], ["LIMIT", 24], ["OFFSET", 0]]
+  Rendered api/v1/constellations/_info.json.jbuilder (0.5ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/index.json.jbuilder (67.9ms)
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 222ms (Views: 61.9ms | ActiveRecord: 39.5ms)
+
+
+Started GET "/api/v1/constellations" for 127.0.0.1 at 2019-05-12 19:39:47 -0700
+Processing by Api::V1::ConstellationsController#index as JSON
+  Parameters: {"constellation"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  Rendering api/v1/constellations/index.json.jbuilder
+  [1m[36mConstellation Load (0.5ms)[0m  [1m[34mSELECT  "constellations".* FROM "constellations" WHERE "constellations"."is_deleted" = $1 ORDER BY "constellations"."id" ASC LIMIT $2 OFFSET $3[0m  [["is_deleted", "f"], ["LIMIT", 24], ["OFFSET", 0]]
+  Rendered api/v1/constellations/_info.json.jbuilder (0.6ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.3ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.2ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/index.json.jbuilder (8.9ms)
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 43ms (Views: 9.2ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/api/v1/constellations?is_deleted=false" for 127.0.0.1 at 2019-05-12 19:40:06 -0700
+Processing by Api::V1::ConstellationsController#index as JSON
+  Parameters: {"is_deleted"=>"false", "constellation"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  Rendering api/v1/constellations/index.json.jbuilder
+  [1m[36mConstellation Load (0.5ms)[0m  [1m[34mSELECT  "constellations".* FROM "constellations" WHERE "constellations"."is_deleted" = $1 ORDER BY "constellations"."id" ASC LIMIT $2 OFFSET $3[0m  [["is_deleted", "false"], ["LIMIT", 24], ["OFFSET", 0]]
+  Rendered api/v1/constellations/_info.json.jbuilder (0.4ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/index.json.jbuilder (7.3ms)
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 24ms (Views: 7.5ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/api/v1/constellations?is_deleted=false&show_on_sign_up=false" for 127.0.0.1 at 2019-05-12 19:40:26 -0700
+Processing by Api::V1::ConstellationsController#index as JSON
+  Parameters: {"is_deleted"=>"false", "show_on_sign_up"=>"false", "constellation"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  Rendering api/v1/constellations/index.json.jbuilder
+  [1m[36mConstellation Load (0.7ms)[0m  [1m[34mSELECT  "constellations".* FROM "constellations" WHERE "constellations"."show_on_sign_up" = $1 AND "constellations"."is_deleted" = $2 ORDER BY "constellations"."id" ASC LIMIT $3 OFFSET $4[0m  [["show_on_sign_up", "false"], ["is_deleted", "false"], ["LIMIT", 24], ["OFFSET", 0]]
+  Rendered api/v1/constellations/_info.json.jbuilder (0.4ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.2ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.3ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.2ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/_info.json.jbuilder (0.1ms)
+  Rendered api/v1/constellations/index.json.jbuilder (16.0ms)
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 34ms (Views: 16.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/v1/constellations?is_deleted=true&show_on_sign_up=true" for 127.0.0.1 at 2019-05-12 19:40:39 -0700
+Processing by Api::V1::ConstellationsController#index as JSON
+  Parameters: {"is_deleted"=>"true", "show_on_sign_up"=>"true", "constellation"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  Rendering api/v1/constellations/index.json.jbuilder
+  [1m[36mConstellation Load (1.0ms)[0m  [1m[34mSELECT  "constellations".* FROM "constellations" WHERE "constellations"."show_on_sign_up" = $1 AND "constellations"."is_deleted" = $2 ORDER BY "constellations"."id" ASC LIMIT $3 OFFSET $4[0m  [["show_on_sign_up", "true"], ["is_deleted", "true"], ["LIMIT", 24], ["OFFSET", 0]]
+  Rendered api/v1/constellations/_info.json.jbuilder (0.4ms)
+  Rendered api/v1/constellations/index.json.jbuilder (4.2ms)
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 23ms (Views: 4.3ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/api/v1/constellations?is_deleted=true&show_on_sign_up=true" for 127.0.0.1 at 2019-05-12 19:40:41 -0700
+Processing by Api::V1::ConstellationsController#index as JSON
+  Parameters: {"is_deleted"=>"true", "show_on_sign_up"=>"true", "constellation"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  Rendering api/v1/constellations/index.json.jbuilder
+  [1m[36mConstellation Load (0.4ms)[0m  [1m[34mSELECT  "constellations".* FROM "constellations" WHERE "constellations"."show_on_sign_up" = $1 AND "constellations"."is_deleted" = $2 ORDER BY "constellations"."id" ASC LIMIT $3 OFFSET $4[0m  [["show_on_sign_up", "true"], ["is_deleted", "true"], ["LIMIT", 24], ["OFFSET", 0]]
+  Rendered api/v1/constellations/_info.json.jbuilder (0.4ms)
+  Rendered api/v1/constellations/index.json.jbuilder (2.8ms)
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (2.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 21ms (Views: 3.1ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/api/v1/constellations?is_deleted=true&show_on_sign_up=false" for 127.0.0.1 at 2019-05-12 19:40:48 -0700
+Processing by Api::V1::ConstellationsController#index as JSON
+  Parameters: {"is_deleted"=>"true", "show_on_sign_up"=>"false", "constellation"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  Rendering api/v1/constellations/index.json.jbuilder
+  [1m[36mConstellation Load (0.5ms)[0m  [1m[34mSELECT  "constellations".* FROM "constellations" WHERE "constellations"."show_on_sign_up" = $1 AND "constellations"."is_deleted" = $2 ORDER BY "constellations"."id" ASC LIMIT $3 OFFSET $4[0m  [["show_on_sign_up", "false"], ["is_deleted", "true"], ["LIMIT", 24], ["OFFSET", 0]]
+  Rendered api/v1/constellations/_info.json.jbuilder (0.4ms)
+  Rendered api/v1/constellations/index.json.jbuilder (2.9ms)
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (3.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 21ms (Views: 3.3ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/api/v1/constellations?is_deleted=false&show_on_sign_up=true" for 127.0.0.1 at 2019-05-12 19:40:56 -0700
+Processing by Api::V1::ConstellationsController#index as JSON
+  Parameters: {"is_deleted"=>"false", "show_on_sign_up"=>"true", "constellation"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  Rendering api/v1/constellations/index.json.jbuilder
+  [1m[36mConstellation Load (0.6ms)[0m  [1m[34mSELECT  "constellations".* FROM "constellations" WHERE "constellations"."show_on_sign_up" = $1 AND "constellations"."is_deleted" = $2 ORDER BY "constellations"."id" ASC LIMIT $3 OFFSET $4[0m  [["show_on_sign_up", "true"], ["is_deleted", "false"], ["LIMIT", 24], ["OFFSET", 0]]
+  Rendered api/v1/constellations/_info.json.jbuilder (0.4ms)
+  Rendered api/v1/constellations/index.json.jbuilder (2.8ms)
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 23ms (Views: 3.2ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/api/v1/constellations?is_deleted=false&show_on_sign_up=true" for 127.0.0.1 at 2019-05-12 19:40:58 -0700
+Processing by Api::V1::ConstellationsController#index as JSON
+  Parameters: {"is_deleted"=>"false", "show_on_sign_up"=>"true", "constellation"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  Rendering api/v1/constellations/index.json.jbuilder
+  [1m[36mConstellation Load (0.5ms)[0m  [1m[34mSELECT  "constellations".* FROM "constellations" WHERE "constellations"."show_on_sign_up" = $1 AND "constellations"."is_deleted" = $2 ORDER BY "constellations"."id" ASC LIMIT $3 OFFSET $4[0m  [["show_on_sign_up", "true"], ["is_deleted", "false"], ["LIMIT", 24], ["OFFSET", 0]]
+  Rendered api/v1/constellations/_info.json.jbuilder (0.5ms)
+  Rendered api/v1/constellations/index.json.jbuilder (3.3ms)
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 24ms (Views: 3.7ms | ActiveRecord: 4.8ms)
+
+
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/lix/Desktop/ruby-on-rails-apiary/config/initializers/new_framework_defaults.rb:15)
+Started GET "/api/v1/goals" for 127.0.0.1 at 2019-05-12 20:00:43 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::GoalsController#index as JSON
+  Parameters: {"goal"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mGoal Load (1.0ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."is_deleted" = $1[0m  [["is_deleted", "f"]]
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 130ms (Views: 6.7ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/api/v1/goals?is_deleted=false" for 127.0.0.1 at 2019-05-12 20:00:53 -0700
+Processing by Api::V1::GoalsController#index as JSON
+  Parameters: {"is_deleted"=>"false", "goal"=>{}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mGoal Load (0.5ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."is_deleted" = $1[0m  [["is_deleted", "false"]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 19ms (Views: 2.0ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/api/v1/goals?is_deleted=true" for 127.0.0.1 at 2019-05-12 20:00:59 -0700
+Processing by Api::V1::GoalsController#index as JSON
+  Parameters: {"is_deleted"=>"true", "goal"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mGoal Load (0.4ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."is_deleted" = $1[0m  [["is_deleted", "true"]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 18ms (Views: 1.7ms | ActiveRecord: 4.1ms)
+
+
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/lix/Desktop/ruby-on-rails-apiary/config/initializers/new_framework_defaults.rb:15)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/lix/Desktop/ruby-on-rails-apiary/config/initializers/new_framework_defaults.rb:15)
+Started GET "/api/v1/goals?is_deleted=true" for 127.0.0.1 at 2019-05-12 20:22:00 -0700
+Processing by Api::V1::GoalsController#index as JSON
+  Parameters: {"is_deleted"=>"true", "goal"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mGoal Load (0.7ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."is_deleted" = $1[0m  [["is_deleted", "true"]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 87ms (Views: 4.4ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/api/v1/goals" for 127.0.0.1 at 2019-05-12 20:22:17 -0700
+Processing by Api::V1::GoalsController#index as JSON
+  Parameters: {"goal"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mGoal Load (0.4ms)[0m  [1m[34mSELECT "goals".* FROM "goals" WHERE "goals"."is_deleted" = $1[0m  [["is_deleted", "f"]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 16ms (Views: 1.8ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/api/v1/goals" for 127.0.0.1 at 2019-05-12 20:22:25 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/goals"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+request_store (1.3.2) lib/request_store/middleware.rb:9:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/api/v1/constellations?is_deleted=false&show_on_sign_up=true" for 127.0.0.1 at 2019-05-12 20:22:33 -0700
+Processing by Api::V1::ConstellationsController#index as JSON
+  Parameters: {"is_deleted"=>"false", "show_on_sign_up"=>"true", "constellation"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  Rendering api/v1/constellations/index.json.jbuilder
+  [1m[36mConstellation Load (0.9ms)[0m  [1m[34mSELECT  "constellations".* FROM "constellations" WHERE "constellations"."show_on_sign_up" = $1 AND "constellations"."is_deleted" = $2 ORDER BY "constellations"."id" ASC LIMIT $3 OFFSET $4[0m  [["show_on_sign_up", "true"], ["is_deleted", "false"], ["LIMIT", 24], ["OFFSET", 0]]
+  Rendered api/v1/constellations/_info.json.jbuilder (0.7ms)
+  Rendered api/v1/constellations/index.json.jbuilder (16.8ms)
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 37ms (Views: 15.8ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/api/v1/planets?is_deleted=false&is_approved=false" for 127.0.0.1 at 2019-05-12 20:22:38 -0700
+Processing by Api::V1::PlanetsController#index as JSON
+  Parameters: {"is_deleted"=>"false", "is_approved"=>"false", "planet"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mPlanet Load (24.6ms)[0m  [1m[34mSELECT "planets".* FROM "planets" WHERE "planets"."is_deleted" = $1 AND "planets"."is_approved" = $2[0m  [["is_deleted", "false"], ["is_approved", "false"]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 54ms (Views: 9.8ms | ActiveRecord: 32.8ms)
+
+
+Started GET "/api/v1/interests_constellations" for 127.0.0.1 at 2019-05-12 20:22:58 -0700
+Processing by Api::V1::InterestsConstellationsController#index as JSON
+  Parameters: {"interests_constellation"=>{"constellation_id"=>2}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mInterestsConstellation Load (22.5ms)[0m  [1m[34mSELECT "interests_constellations".* FROM "interests_constellations"[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 51ms (Views: 7.4ms | ActiveRecord: 28.9ms)
+
+
+Started GET "/api/v1/interests_planets" for 127.0.0.1 at 2019-05-12 20:23:06 -0700
+Processing by Api::V1::InterestsPlanetsController#index as JSON
+  Parameters: {"interests_planet"=>{"planet_id"=>1, "user_id"=>1}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = $1 LIMIT $2[0m  [["uid", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[36mInterestsPlanet Load (21.6ms)[0m  [1m[34mSELECT "interests_planets".* FROM "interests_planets"[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = $1 AND ("users"."id" != $2) AND "users"."provider" = $3 LIMIT $4[0m  [["uid", "test1@gmail.com"], ["id", 1], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "test1"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 52ms (Views: 10.3ms | ActiveRecord: 28.2ms)
+
+
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/lix/Desktop/ruby-on-rails-apiary/config/initializers/new_framework_defaults.rb:15)

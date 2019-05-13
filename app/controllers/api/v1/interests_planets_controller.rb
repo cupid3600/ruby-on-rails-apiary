@@ -3,10 +3,6 @@ module Api
     class InterestsPlanetsController < ApiController
       helper_method :interests_planet
 
-      def show
-        json_response({ interests_planet: interests_planet })
-      end
-
       def create
         @interests_planet = InterestsPlanet.create!(interests_planet_params)
         json_response({ interests_planet: @interests_planet })

@@ -1,10 +1,10 @@
-# API Template
+# API Template  
 
 ## Setup
 
 1. Clone this repo
 2. Create your `database.yml` and `application.yml` file
-3. `bundle install`(if you get error in pg 0.18.2, try to run: sudo apt install libpq-dev. And bundle install again)
+3. `bundle install`
 4. Generate a secret key with `rake secret` and paste this value into the `application.yml`
 5. `rake db:create`
 6. `rake db:migrate`
