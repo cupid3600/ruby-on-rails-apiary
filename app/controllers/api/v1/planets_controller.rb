@@ -4,31 +4,24 @@ module Api
       helper_method :planet
 
       def show
-        json_response({ planet: planet })
       end
 
       def index
-        if params[:is_deleted].present? && params[:is_approved].present?
-          @planets = Planet.where({:is_deleted => params[:is_deleted], :is_approved => params[:is_approved]})
-          json_response({ planets: @planets })
-        elsif query_params.present?
-          @planets = Planet.where(:constellation_id => query_params)
-          json_response({ planets: @planets })
-        else
-          @planets = Planet.where({:is_deleted => false, :is_approved => true})
-          json_response({ planets: @planets })
-        end
+        query = Planet.order(:id)
+        query = query.is_deleted(params[:is_deleted]) if params[:is_deleted].present?
+        query = query.is_approved(params[:is_approved]) if params[:is_approved].present?
+        query = query.both(true, false ) if !params[:is_approved].present? && !params[:is_deleted].present?
+        query = query.constellation_id(query_params) if query_params.present?
+        @planets = query.all
 
       end
 
       def create
         @planet = Planet.create!(planet_params)
-        json_response({ planet: @planet })
       end
 
       def update
         planet.update!(planet_params)
-        json_response({ planet: planet })
       end
 
       private

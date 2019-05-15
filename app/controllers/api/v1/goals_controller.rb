@@ -5,19 +5,14 @@ module Api
       helper_method :goal
 
       def show
-        json_response({ goal: goal })
       end
 
       def index
-
         if params[:is_deleted]
           @goals = Goal.is_deleted(params[:is_deleted])
-          json_response({ goals: @goals })
         else
           @goals = Goal.is_deleted(false )
-          json_response({ goals: @goals })
         end
-
       end
 
       private

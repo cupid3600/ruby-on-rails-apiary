@@ -5,17 +5,14 @@ module Api
 
       def create
         @interests_constellation = InterestsConstellation.create!(interests_constellation_params)
-        json_response({ interests_constellation: @interests_constellation })
       end
 
       def index
         @interests_constellations = InterestsConstellation.all
-        json_response({ interests_constellations: @interests_constellations })
       end
 
       def update
         interests_constellation.update!(interests_constellation_params)
-        json_response({ interests_constellation: @interests_constellation })
       end
 
       def destroy

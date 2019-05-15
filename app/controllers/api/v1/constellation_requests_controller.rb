@@ -32,9 +32,7 @@ module Api
         constellation = Constellation.find_by(name: constellation_request_params[:name])
         return unless constellation
 
-        render json: {
-          errors: 'A constellation already exists with that name'
-        }, status: :bad_request
+        json_response({ errors: 'A constellation already exists with that name' }, status: bad_request)
       end
     end
   end

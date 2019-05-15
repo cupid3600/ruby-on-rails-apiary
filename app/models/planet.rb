@@ -19,4 +19,9 @@
 class Planet < ApplicationRecord
   belongs_to :constellation
   has_many :interests_planet
+
+  scope :is_deleted, ->(is_deleted) { where(is_deleted: is_deleted) }
+  scope :is_approved, ->(is_approved) { where(is_approved: is_approved) }
+  scope :constellation_id, ->(constellation_id) { where(:constellation_id => constellation_id) }
+  scope :both, ->(is_approved, is_deleted) { where(is_approved: is_approved, is_deleted: is_deleted) }
 end

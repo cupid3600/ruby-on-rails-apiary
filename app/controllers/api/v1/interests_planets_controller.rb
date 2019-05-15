@@ -5,17 +5,14 @@ module Api
 
       def create
         @interests_planet = InterestsPlanet.create!(interests_planet_params)
-        json_response({ interests_planet: @interests_planet })
       end
 
       def index
         @interests_planets = InterestsPlanet.all
-        json_response({ interests_planets: @interests_planets })
       end
 
       def update
         interests_planet.update!(interests_planet_params)
-        json_response({ interests_planet: @interests_planet })
       end
 
       def destroy
