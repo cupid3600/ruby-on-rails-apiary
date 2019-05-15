@@ -2,50 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caffa539-c87b-47ef-8708-898fb3e7ec54" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/api/v1/goals/_info.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/api/v1/goals/index.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/api/v1/goals/show.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/api/v1/interests_constellations/_info.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/api/v1/interests_constellations/create.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/api/v1/interests_constellations/index.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/api/v1/interests_constellations/update.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/api/v1/interests_planets/_info.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/api/v1/interests_planets/create.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/api/v1/interests_planets/index.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/api/v1/interests_planets/update.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/api/v1/planets/_info.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/api/v1/planets/create.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/api/v1/planets/index.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/api/v1/planets/update.json.jbuilder" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/constellation_requests_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/constellation_requests_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/constellations_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/constellations_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/goals_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/goals_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/interests_constellations_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/interests_constellations_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/interests_planets_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/interests_planets_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/planets_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/planets_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/registrations_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/registrations_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/sessions_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/sessions_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/shooting_stars_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/shooting_stars_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/planet.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/planet.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/development.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/controllers/api/v1/goals_controller_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/controllers/api/v1/interests_constellations_controller_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/controllers/api/v1/interests_planet_controller_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/controllers/api/v1/interests_planets_controller_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/controllers/api/v1/planets_controller_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/controllers/planets_controller_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/decorators/api/v1/goal_decorator_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/decorators/api/v1/interests_constellation_decorator_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/decorators/api/v1/interests_planet_decorator_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/decorators/api/v1/planet_decorator_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/decorators/planet_decorator_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/helpers/api/v1/goals_helper_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/helpers/api/v1/interests_constellations_helper_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/helpers/api/v1/interests_planet_helper_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/helpers/api/v1/interests_planets_helper_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/helpers/api/v1/planets_helper_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/helpers/planets_helper_spec.rb" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -63,15 +21,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/sessions_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/shooting_stars_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -108,11 +57,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/passwords_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+            <state relative-caret-position="231">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="651">
+              <caret line="31" column="15" lean-forward="true" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -219,6 +177,7 @@
         <option value="$PROJECT_DIR$/app/controllers/api/v1/registrations_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/api/v1/sessions_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/api/v1/constellation_requests_controller.rb" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -336,24 +295,6 @@
               <item name="api" type="462c0819:PsiDirectoryNode" />
               <item name="v1" type="462c0819:PsiDirectoryNode" />
               <item name="interests_constellations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ruby-on-rails-apiary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ruby-on-rails-apiary" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="v1" type="462c0819:PsiDirectoryNode" />
-              <item name="interests_planets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ruby-on-rails-apiary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ruby-on-rails-apiary" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="v1" type="462c0819:PsiDirectoryNode" />
-              <item name="planets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ruby-on-rails-apiary" type="b2602c69:ProjectViewProjectNode" />
@@ -533,12 +474,12 @@
       <workItem from="1557478109053" duration="4505000" />
       <workItem from="1557709866250" duration="9995000" />
       <workItem from="1557802085234" duration="7595000" />
-      <workItem from="1557890131000" duration="10848000" />
+      <workItem from="1557890131000" duration="11251000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75450000" />
+    <option name="totallyTimeSpent" value="75853000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="959" extended-state="6" />
@@ -573,13 +514,6 @@
     <SUITE FILE_PATH="coverage/ruby_on_rails_apiary@Development__ruby_on_rails_apiary.rcov" NAME="Development: ruby-on-rails-apiary Coverage Results" MODIFIED="1557401808439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-on-rails-apiary" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/api/v1/shooting_stars/show_one.json.jbuilder">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/api/v1/shooting_stars/_info.json.jbuilder">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -889,8 +823,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/passwords_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        <state relative-caret-position="231">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="31" column="15" lean-forward="true" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
         </state>
       </provider>
     </entry>
