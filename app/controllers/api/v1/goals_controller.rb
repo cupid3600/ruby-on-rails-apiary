@@ -8,11 +8,12 @@ module Api
       end
 
       def index
-        if params[:is_deleted]
-          @goals = Goal.is_deleted(params[:is_deleted])
+        @goals = if params[:is_deleted]
+          Goal.is_deleted(params[:is_deleted])
         else
-          @goals = Goal.is_deleted(false )
+          Goal.is_deleted(false)
         end
+        @goals = @goals.page(params['page'])
       end
 
       private

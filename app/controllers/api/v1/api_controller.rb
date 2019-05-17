@@ -5,8 +5,6 @@ module Api
     class ApiController < ApplicationController
       include Concerns::ActAsApiRequest
       include DeviseTokenAuth::Concerns::SetUserByToken
-      include Response
-      include LogHelper
 
       before_action :authenticate_user!, except: :status
 
@@ -20,6 +18,7 @@ module Api
       rescue_from ActionController::UnknownController, with: :render_not_found
       rescue_from ActionController::BadRequest,        with: :render_bad_request
       rescue_from AbstractController::ActionNotFound,  with: :render_not_found
+      rescue_from ActionController::ParameterMissing,  with: :render_params_missing
 
       def status
         render json: { online: true }
@@ -43,6 +42,11 @@ module Api
       def render_bad_request(exception)
         logger.info(exception) # for logging
         render json: { errors: 'Invalid request' }, status: :bad_request
+      end
+
+      def render_params_missing(exception)
+        logger.info(exception) # for logging
+        render json: { error: exception.message }, status: :bad_request
       end
     end
   end

@@ -8,21 +8,20 @@ module Api
       end
 
       def index
-        @interests_constellations = InterestsConstellation.all
-      end
-
-      def update
-        interests_constellation.update!(interests_constellation_params)
+        @interests_constellations = InterestsConstellation.all.page(params['page'])
       end
 
       def destroy
         interests_constellation.destroy
-        json_response({ delete: 'success' })
+        render json: { delete: 'success' }, staus: :ok
       end
 
       private
 
       def interests_constellation_params
+        if params[:interests_constellation]
+          params[:interests_constellation][:user_id] = current_user.id
+        end
         params.require(:interests_constellation).permit(
             :constellation_id, :user_id)
       end

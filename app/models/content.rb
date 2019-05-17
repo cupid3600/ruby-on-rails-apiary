@@ -76,6 +76,8 @@ class Content < ApplicationRecord
           ENV['DAYS_TO_EXPIRE'].to_i, Time.zone.now.yday, 0)
   }
 
+  scope :filter_by_user, -> (user_id) { where(user_id: user_id) }
+
   accepts_nested_attributes_for :constellations
 
   delegate :count, to: :flags, prefix: true

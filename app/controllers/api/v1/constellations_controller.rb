@@ -2,15 +2,15 @@ module Api
   module V1
     class ConstellationsController < Api::V1::ApiController
       def index
-        query = Constellation.order(:id)
-        query = query.page(params[:page]) if params[:page].present?
-        query = params[:is_deleted].present? ? query.is_deleted(params[:is_deleted]): query.is_deleted(false)
-        query = query.show_on_sign_up(params[:show_on_sign_up]) if params[:show_on_sign_up].present?
-        @constellations = query.all
+        is_deleted = params[:is_deleted].present? ? params[:is_deleted] : false
+        constellations = Constellation.by_deleted(is_deleted)
+
+        constellations = constellations.by_show_on_sign_up(params[:show_on_sign_up]) if params[:show_on_sign_up].present?
+        @constellations = constellations.order(:id).page(params[:page])
       end
 
       def search
-          @constellations = Constellation.search(params[:constellation]).page(params[:page])
+        @constellations = Constellation.search(params[:constellation]).page(params[:page])
       end
 
       def summary

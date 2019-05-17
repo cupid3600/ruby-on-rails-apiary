@@ -7,13 +7,11 @@ module Api
       end
 
       def index
-        query = Planet.order(:id)
-        query = query.is_deleted(params[:is_deleted]) if params[:is_deleted].present?
-        query = query.is_approved(params[:is_approved]) if params[:is_approved].present?
-        query = query.both(true, false ) if !params[:is_approved].present? && !params[:is_deleted].present?
-        query = query.constellation_id(query_params) if query_params.present?
-        @planets = query.all
-
+        planets = Planet.all
+        planets = planets.by_deleted(params[:is_deleted]) if params[:is_deleted].present?
+        planets = planets.by_approved(params[:is_approved]) if params[:is_approved].present?
+        planets = planets.by_constellation_id(constellation_params) if constellation_params.present?
+        @planets = planets.order(:id).page(params['page'])
       end
 
       def create
@@ -37,7 +35,7 @@ module Api
         params[:id]
       end
 
-      def query_params
+      def constellation_params
         if params[:constellation_id].present?
           params[:constellation_id].is_a?(Array) ? params[:constellation_id] : params[:constellation_id].split(",")
         end

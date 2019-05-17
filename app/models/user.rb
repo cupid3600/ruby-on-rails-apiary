@@ -46,11 +46,20 @@ class User < ApplicationRecord
   has_many :constellation_requests
   has_many :interests_constellations
   has_many :interests_planets
+  has_many :codes
 
   validates :uid, uniqueness: { scope: :provider }
   validates :username, uniqueness: true
 
   before_validation :init_uid
+
+  def send_reset_password_code_email(opts={})
+    code = self.codes.new(code: opts[:code])
+    code.save
+
+    UserMailer.reset_password_code_email(code).deliver
+    code
+  end
 
   private
 

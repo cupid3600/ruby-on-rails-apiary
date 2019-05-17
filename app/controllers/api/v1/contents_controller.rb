@@ -5,11 +5,15 @@ module Api
     class ContentsController < Api::V1::ApiController
       skip_before_action :check_json_request, only: [:create]
       before_action :check_file_type, only: [:create]
+      before_action :check_user_or_constelation, only: [:index]
 
       helper_method :content
 
       def index
-        @contents = constellation.contents.allowed
+        contents = Content.all
+        contents = constellation.contents if params[:constellation_id]
+        contents = contents.filter_by_user(params[:user_id]) if params[:user_id]
+        @contents = contents.allowed
                     .newest.page(params['page']).required_information
       end
 
@@ -59,6 +63,12 @@ module Api
 
       def content_class
         @content_class ||= content_params[:file].content_type.split('/')[0].capitalize
+      end
+
+      def check_user_or_constelation
+        if !params[:user_id] && !params[:constellation_id]
+          raise ActionController::ParameterMissing, "user_id or constelation_id is missing"
+        end
       end
     end
   end

@@ -14,6 +14,9 @@ Rails.application.routes.draw do
         resources :users, only: :show
         resource :user, only: :update do
           get :profile
+          post :codes
+          post :update_password
+          post :verify_code
         end
         resources :constellations, only: :index do
           collection do

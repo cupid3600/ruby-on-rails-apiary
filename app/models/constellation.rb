@@ -21,9 +21,8 @@ class Constellation < ApplicationRecord
   has_many :interests_constellations
   validates :name, presence: true
 
-  scope :is_deleted, ->(is_deleted) { where(is_deleted: is_deleted) }
-  scope :show_on_sign_up, ->(show_on_sign_up) { where(show_on_sign_up: show_on_sign_up) }
-  scope :both, ->(show_on_sign_up, is_deleted) { where(show_on_sign_up: show_on_sign_up, is_deleted: is_deleted) }
+  scope :by_deleted, ->(is_deleted) { where(is_deleted: is_deleted) }
+  scope :by_show_on_sign_up, ->(show_on_sign_up) { where(show_on_sign_up: show_on_sign_up) }
 
   def self.to_dropdown_ordered
     order('LOWER(name)').map do |constellation|
