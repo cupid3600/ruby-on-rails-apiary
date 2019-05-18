@@ -19,8 +19,8 @@ module Api
       private
 
       def interests_planet_params
-        if params[:interests_planets]
-          params[:interests_planets][:user_id] = current_user.id
+        if params[:interests_planet]
+          params[:interests_planet][:user_id] = current_user.id
         end
         params.require(:interests_planet).permit(
             :planet_id, :user_id)

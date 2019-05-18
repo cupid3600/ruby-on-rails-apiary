@@ -44,6 +44,7 @@ Rails.application.routes.draw do
         resources :planets, only: [:index, :show, :create, :update]
         resources :interests_constellations, except: [:show, :new, :edit]
         resources :interests_planets, except: [:show, :new, :edit]
+        resources :interests_goals, except: [:show, :new, :edit]
         scope :shooting_stars, controller: :shooting_stars do
           get :show_one
           get :count

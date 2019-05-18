@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190517073811) do
+ActiveRecord::Schema.define(version: 20190518123021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +119,16 @@ ActiveRecord::Schema.define(version: 20190517073811) do
     t.index ["slug"], name: "index_goals_on_slug"
   end
 
+  create_table "goals_test", id: :serial, force: :cascade do |t|
+    t.string "slug", limit: 255, null: false
+    t.string "title", limit: 255, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at"
+    t.boolean "is_deleted", default: false, null: false
+    t.index ["slug"], name: "goals_test_slug_key", unique: true
+    t.index ["slug"], name: "slug"
+  end
+
   create_table "hearts", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "content_id"
@@ -135,6 +145,15 @@ ActiveRecord::Schema.define(version: 20190517073811) do
     t.datetime "updated_at", null: false
     t.index ["constellation_id"], name: "index_interests_constellations_on_constellation_id"
     t.index ["user_id"], name: "index_interests_constellations_on_user_id"
+  end
+
+  create_table "interests_goals", force: :cascade do |t|
+    t.bigint "goal_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["goal_id"], name: "index_interests_goals_on_goal_id"
+    t.index ["user_id"], name: "index_interests_goals_on_user_id"
   end
 
   create_table "interests_planets", force: :cascade do |t|
@@ -191,6 +210,8 @@ ActiveRecord::Schema.define(version: 20190517073811) do
   add_foreign_key "hearts", "users"
   add_foreign_key "interests_constellations", "constellations"
   add_foreign_key "interests_constellations", "users"
+  add_foreign_key "interests_goals", "goals"
+  add_foreign_key "interests_goals", "users"
   add_foreign_key "interests_planets", "planets"
   add_foreign_key "interests_planets", "users"
   add_foreign_key "planets", "constellations"

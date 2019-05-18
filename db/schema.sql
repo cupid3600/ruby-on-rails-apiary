@@ -37,6 +37,19 @@ updated_at TIMESTAMP NULL,
 FOREIGN KEY (constellation_id) REFERENCES constellations(id) ON DELETE CASCADE,
 FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
+
+/*interests_planets*/
+CREATE TABLE interests_goals
+(
+id serial PRIMARY KEY,
+goal_id int NOT NULL,
+user_id int NOT NULL,
+created_at TIMESTAMP NOT NULL,
+updated_at TIMESTAMP NULL,
+FOREIGN KEY (goal_id) REFERENCES goals(id) ON DELETE CASCADE,
+FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
 /*goals*/
 CREATE TABLE goals
 (

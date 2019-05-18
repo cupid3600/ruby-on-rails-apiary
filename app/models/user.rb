@@ -46,6 +46,7 @@ class User < ApplicationRecord
   has_many :constellation_requests
   has_many :interests_constellations
   has_many :interests_planets
+  has_many :interests_goals
   has_many :codes
 
   validates :uid, uniqueness: { scope: :provider }
