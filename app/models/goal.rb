@@ -15,7 +15,7 @@
 #
 
 class Goal < ApplicationRecord
-  has_many :interests_constellations
+  has_many :interests_goals
 
   scope :is_deleted, ->(is_deleted) { where(is_deleted: is_deleted) }
 end
